@@ -114,7 +114,6 @@ $(document).ready(function(){initNavTree('de/daa/dot_8cpp.html','../../'); initR
 <code>#include &quot;<a class="el" href="../../d8/dce/language_8h_source.html">language.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../d5/d61/indexlist_8h_source.html">indexlist.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../df/d9c/dir_8h_source.html">dir.h</a>&quot;</code><br />
-<code>#include &quot;filesystem.hpp&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="../../closed.png" alt="+"/> Include dependency graph for dot.cpp:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -162,7 +161,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/daa/dot_8cpp_source.html#l00035">35</a> of file <a class="el" href="../../de/daa/dot_8cpp_source.html">dot.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/daa/dot_8cpp_source.html#l00034">34</a> of file <a class="el" href="../../de/daa/dot_8cpp_source.html">dot.cpp</a>.</p>
 
 </div>
 </div>
@@ -191,40 +190,40 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/daa/dot_8cpp_source.html#l00043">43</a> of file <a class="el" href="../../de/daa/dot_8cpp_source.html">dot.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   44</span>{</div>
-<div class="line"><span class="lineno">   45</span>  <a class="code hl_define" href="../../d7/d5c/qcstring_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(<a class="code hl_variable" href="../../de/daa/dot_8cpp.html#a60d30e2e6c2496b226540c48f7a6fca7">g_dotFontPath</a>.<a class="code hl_function" href="../../d9/d45/class_q_c_string.html#a621c4090d69ad7d05ef8e5234376c3d8">isEmpty</a>());</div>
-<div class="line"><span class="lineno">   46</span>  <a class="code hl_variable" href="../../de/daa/dot_8cpp.html#a60d30e2e6c2496b226540c48f7a6fca7">g_dotFontPath</a> = <a class="code hl_function" href="../../d7/d6f/namespace_portable.html#ae1a7516287ca7c75eebc3fa7aa12e970">Portable::getenv</a>(<span class="stringliteral">&quot;DOTFONTPATH&quot;</span>);</div>
-<div class="line"><span class="lineno">   47</span>  <a class="code hl_class" href="../../d9/d45/class_q_c_string.html">QCString</a> newFontPath = <a class="code hl_define" href="../../db/d16/config_8h.html#a737741e6991bdb5694a50075437a9d89">Config_getString</a>(DOT_FONTPATH);</div>
-<div class="line"><span class="lineno">   48</span>  <span class="keywordflow">if</span> (!newFontPath.<a class="code hl_function" href="../../d9/d45/class_q_c_string.html#a621c4090d69ad7d05ef8e5234376c3d8">isEmpty</a>() &amp;&amp; !path.<a class="code hl_function" href="../../d9/d45/class_q_c_string.html#a621c4090d69ad7d05ef8e5234376c3d8">isEmpty</a>())</div>
-<div class="line"><span class="lineno">   49</span>  {</div>
-<div class="line"><span class="lineno">   50</span>    newFontPath.<a class="code hl_function" href="../../d9/d45/class_q_c_string.html#a0a6a8fe99e596b149ee15138fa8dcf0c">prepend</a>(path+<a class="code hl_function" href="../../d7/d6f/namespace_portable.html#a33ec52ac55c4d58e0748239920ee3e14">Portable::pathListSeparator</a>());</div>
-<div class="line"><span class="lineno">   51</span>  }</div>
-<div class="line"><span class="lineno">   52</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> (newFontPath.<a class="code hl_function" href="../../d9/d45/class_q_c_string.html#a621c4090d69ad7d05ef8e5234376c3d8">isEmpty</a>() &amp;&amp; !path.<a class="code hl_function" href="../../d9/d45/class_q_c_string.html#a621c4090d69ad7d05ef8e5234376c3d8">isEmpty</a>())</div>
-<div class="line"><span class="lineno">   53</span>  {</div>
-<div class="line"><span class="lineno">   54</span>    newFontPath=path;</div>
-<div class="line"><span class="lineno">   55</span>  }</div>
-<div class="line"><span class="lineno">   56</span>  <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">   57</span>  {</div>
-<div class="line"><span class="lineno">   58</span>    <a class="code hl_function" href="../../d7/d6f/namespace_portable.html#ac2e29048cffc72c3bed439cff5b02cd4">Portable::unsetenv</a>(<span class="stringliteral">&quot;DOTFONTPATH&quot;</span>);</div>
-<div class="line"><span class="lineno">   59</span>    <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   60</span>  }</div>
-<div class="line"><span class="lineno">   61</span>  <a class="code hl_function" href="../../d7/d6f/namespace_portable.html#abd244447df22d110ad410b69c357fdf3">Portable::setenv</a>(<span class="stringliteral">&quot;DOTFONTPATH&quot;</span>,newFontPath);</div>
-<div class="line"><span class="lineno">   62</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../de/daa/dot_8cpp_source.html#l00042">42</a> of file <a class="el" href="../../de/daa/dot_8cpp_source.html">dot.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   43</span>{</div>
+<div class="line"><span class="lineno">   44</span>  <a class="code hl_define" href="../../d7/d5c/qcstring_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(<a class="code hl_variable" href="../../de/daa/dot_8cpp.html#a60d30e2e6c2496b226540c48f7a6fca7">g_dotFontPath</a>.<a class="code hl_function" href="../../d9/d45/class_q_c_string.html#a621c4090d69ad7d05ef8e5234376c3d8">isEmpty</a>());</div>
+<div class="line"><span class="lineno">   45</span>  <a class="code hl_variable" href="../../de/daa/dot_8cpp.html#a60d30e2e6c2496b226540c48f7a6fca7">g_dotFontPath</a> = <a class="code hl_function" href="../../d7/d6f/namespace_portable.html#ae1a7516287ca7c75eebc3fa7aa12e970">Portable::getenv</a>(<span class="stringliteral">&quot;DOTFONTPATH&quot;</span>);</div>
+<div class="line"><span class="lineno">   46</span>  <a class="code hl_class" href="../../d9/d45/class_q_c_string.html">QCString</a> newFontPath = <a class="code hl_define" href="../../db/d16/config_8h.html#a737741e6991bdb5694a50075437a9d89">Config_getString</a>(DOT_FONTPATH);</div>
+<div class="line"><span class="lineno">   47</span>  <span class="keywordflow">if</span> (!newFontPath.<a class="code hl_function" href="../../d9/d45/class_q_c_string.html#a621c4090d69ad7d05ef8e5234376c3d8">isEmpty</a>() &amp;&amp; !path.<a class="code hl_function" href="../../d9/d45/class_q_c_string.html#a621c4090d69ad7d05ef8e5234376c3d8">isEmpty</a>())</div>
+<div class="line"><span class="lineno">   48</span>  {</div>
+<div class="line"><span class="lineno">   49</span>    newFontPath.<a class="code hl_function" href="../../d9/d45/class_q_c_string.html#a0a6a8fe99e596b149ee15138fa8dcf0c">prepend</a>(path+<a class="code hl_function" href="../../d7/d6f/namespace_portable.html#a33ec52ac55c4d58e0748239920ee3e14">Portable::pathListSeparator</a>());</div>
+<div class="line"><span class="lineno">   50</span>  }</div>
+<div class="line"><span class="lineno">   51</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> (newFontPath.<a class="code hl_function" href="../../d9/d45/class_q_c_string.html#a621c4090d69ad7d05ef8e5234376c3d8">isEmpty</a>() &amp;&amp; !path.<a class="code hl_function" href="../../d9/d45/class_q_c_string.html#a621c4090d69ad7d05ef8e5234376c3d8">isEmpty</a>())</div>
+<div class="line"><span class="lineno">   52</span>  {</div>
+<div class="line"><span class="lineno">   53</span>    newFontPath=path;</div>
+<div class="line"><span class="lineno">   54</span>  }</div>
+<div class="line"><span class="lineno">   55</span>  <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   56</span>  {</div>
+<div class="line"><span class="lineno">   57</span>    <a class="code hl_function" href="../../d7/d6f/namespace_portable.html#ac2e29048cffc72c3bed439cff5b02cd4">Portable::unsetenv</a>(<span class="stringliteral">&quot;DOTFONTPATH&quot;</span>);</div>
+<div class="line"><span class="lineno">   58</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   59</span>  }</div>
+<div class="line"><span class="lineno">   60</span>  <a class="code hl_function" href="../../d7/d6f/namespace_portable.html#abd244447df22d110ad410b69c357fdf3">Portable::setenv</a>(<span class="stringliteral">&quot;DOTFONTPATH&quot;</span>,newFontPath);</div>
+<div class="line"><span class="lineno">   61</span>}</div>
 <div class="ttc" id="aclass_q_c_string_html"><div class="ttname"><a href="../../d9/d45/class_q_c_string.html">QCString</a></div><div class="ttdoc">This is an alternative implementation of QCString.</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00108">qcstring.h:109</a></div></div>
 <div class="ttc" id="aclass_q_c_string_html_a0a6a8fe99e596b149ee15138fa8dcf0c"><div class="ttname"><a href="../../d9/d45/class_q_c_string.html#a0a6a8fe99e596b149ee15138fa8dcf0c">QCString::prepend</a></div><div class="ttdeci">QCString &amp; prepend(const char *s)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00365">qcstring.h:365</a></div></div>
 <div class="ttc" id="aclass_q_c_string_html_a621c4090d69ad7d05ef8e5234376c3d8"><div class="ttname"><a href="../../d9/d45/class_q_c_string.html#a621c4090d69ad7d05ef8e5234376c3d8">QCString::isEmpty</a></div><div class="ttdeci">bool isEmpty() const</div><div class="ttdoc">Returns TRUE iff the string is empty.</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00144">qcstring.h:144</a></div></div>
 <div class="ttc" id="aconfig_8h_html_a737741e6991bdb5694a50075437a9d89"><div class="ttname"><a href="../../db/d16/config_8h.html#a737741e6991bdb5694a50075437a9d89">Config_getString</a></div><div class="ttdeci">#define Config_getString(name)</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d16/config_8h_source.html#l00032">config.h:32</a></div></div>
-<div class="ttc" id="adot_8cpp_html_a60d30e2e6c2496b226540c48f7a6fca7"><div class="ttname"><a href="../../de/daa/dot_8cpp.html#a60d30e2e6c2496b226540c48f7a6fca7">g_dotFontPath</a></div><div class="ttdeci">static QCString g_dotFontPath</div><div class="ttdef"><b>Definition:</b> <a href="../../de/daa/dot_8cpp_source.html#l00039">dot.cpp:39</a></div></div>
+<div class="ttc" id="adot_8cpp_html_a60d30e2e6c2496b226540c48f7a6fca7"><div class="ttname"><a href="../../de/daa/dot_8cpp.html#a60d30e2e6c2496b226540c48f7a6fca7">g_dotFontPath</a></div><div class="ttdeci">static QCString g_dotFontPath</div><div class="ttdef"><b>Definition:</b> <a href="../../de/daa/dot_8cpp_source.html#l00038">dot.cpp:38</a></div></div>
 <div class="ttc" id="anamespace_portable_html_a33ec52ac55c4d58e0748239920ee3e14"><div class="ttname"><a href="../../d7/d6f/namespace_portable.html#a33ec52ac55c4d58e0748239920ee3e14">Portable::pathListSeparator</a></div><div class="ttdeci">QCString pathListSeparator()</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d1c/portable_8cpp_source.html#l00350">portable.cpp:350</a></div></div>
 <div class="ttc" id="anamespace_portable_html_abd244447df22d110ad410b69c357fdf3"><div class="ttname"><a href="../../d7/d6f/namespace_portable.html#abd244447df22d110ad410b69c357fdf3">Portable::setenv</a></div><div class="ttdeci">void setenv(const QCString &amp;variable, const QCString &amp;value)</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d1c/portable_8cpp_source.html#l00240">portable.cpp:240</a></div></div>
 <div class="ttc" id="anamespace_portable_html_ac2e29048cffc72c3bed439cff5b02cd4"><div class="ttname"><a href="../../d7/d6f/namespace_portable.html#ac2e29048cffc72c3bed439cff5b02cd4">Portable::unsetenv</a></div><div class="ttdeci">void unsetenv(const QCString &amp;variable)</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d1c/portable_8cpp_source.html#l00254">portable.cpp:254</a></div></div>
 <div class="ttc" id="anamespace_portable_html_ae1a7516287ca7c75eebc3fa7aa12e970"><div class="ttname"><a href="../../d7/d6f/namespace_portable.html#ae1a7516287ca7c75eebc3fa7aa12e970">Portable::getenv</a></div><div class="ttdeci">QCString getenv(const QCString &amp;variable)</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d1c/portable_8cpp_source.html#l00273">portable.cpp:273</a></div></div>
 <div class="ttc" id="aqcstring_8h_html_aca68c0d4ac8df0838e209fb5300f7be3"><div class="ttname"><a href="../../d7/d5c/qcstring_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a></div><div class="ttdeci">#define ASSERT(x)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00044">qcstring.h:44</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00044">ASSERT</a>, <a class="el" href="../../db/d16/config_8h_source.html#l00032">Config_getString</a>, <a class="el" href="../../de/daa/dot_8cpp_source.html#l00039">g_dotFontPath</a>, <a class="el" href="../../d0/d1c/portable_8cpp_source.html#l00273">Portable::getenv()</a>, <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00144">QCString::isEmpty()</a>, <a class="el" href="../../d0/d1c/portable_8cpp_source.html#l00350">Portable::pathListSeparator()</a>, <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00365">QCString::prepend()</a>, <a class="el" href="../../d0/d1c/portable_8cpp_source.html#l00240">Portable::setenv()</a>, and <a class="el" href="../../d0/d1c/portable_8cpp_source.html#l00254">Portable::unsetenv()</a>.</p>
+<p class="reference">References <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00044">ASSERT</a>, <a class="el" href="../../db/d16/config_8h_source.html#l00032">Config_getString</a>, <a class="el" href="../../de/daa/dot_8cpp_source.html#l00038">g_dotFontPath</a>, <a class="el" href="../../d0/d1c/portable_8cpp_source.html#l00273">Portable::getenv()</a>, <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00144">QCString::isEmpty()</a>, <a class="el" href="../../d0/d1c/portable_8cpp_source.html#l00350">Portable::pathListSeparator()</a>, <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00365">QCString::prepend()</a>, <a class="el" href="../../d0/d1c/portable_8cpp_source.html#l00240">Portable::setenv()</a>, and <a class="el" href="../../d0/d1c/portable_8cpp_source.html#l00254">Portable::unsetenv()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../de/daa/dot_8cpp_source.html#l00149">DotManager::run()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../de/daa/dot_8cpp_source.html#l00148">DotManager::run()</a>.</p>
 
 </div>
 </div>
@@ -251,22 +250,22 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/daa/dot_8cpp_source.html#l00064">64</a> of file <a class="el" href="../../de/daa/dot_8cpp_source.html">dot.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   65</span>{</div>
-<div class="line"><span class="lineno">   66</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../de/daa/dot_8cpp.html#a60d30e2e6c2496b226540c48f7a6fca7">g_dotFontPath</a>.<a class="code hl_function" href="../../d9/d45/class_q_c_string.html#a621c4090d69ad7d05ef8e5234376c3d8">isEmpty</a>())</div>
-<div class="line"><span class="lineno">   67</span>  {</div>
-<div class="line"><span class="lineno">   68</span>    <a class="code hl_function" href="../../d7/d6f/namespace_portable.html#ac2e29048cffc72c3bed439cff5b02cd4">Portable::unsetenv</a>(<span class="stringliteral">&quot;DOTFONTPATH&quot;</span>);</div>
-<div class="line"><span class="lineno">   69</span>  }</div>
-<div class="line"><span class="lineno">   70</span>  <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">   71</span>  {</div>
-<div class="line"><span class="lineno">   72</span>    <a class="code hl_function" href="../../d7/d6f/namespace_portable.html#abd244447df22d110ad410b69c357fdf3">Portable::setenv</a>(<span class="stringliteral">&quot;DOTFONTPATH&quot;</span>,<a class="code hl_variable" href="../../de/daa/dot_8cpp.html#a60d30e2e6c2496b226540c48f7a6fca7">g_dotFontPath</a>);</div>
-<div class="line"><span class="lineno">   73</span>  }</div>
-<div class="line"><span class="lineno">   74</span>  <a class="code hl_variable" href="../../de/daa/dot_8cpp.html#a60d30e2e6c2496b226540c48f7a6fca7">g_dotFontPath</a>=<span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line"><span class="lineno">   75</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../de/daa/dot_8cpp_source.html#l00063">63</a> of file <a class="el" href="../../de/daa/dot_8cpp_source.html">dot.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   64</span>{</div>
+<div class="line"><span class="lineno">   65</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../de/daa/dot_8cpp.html#a60d30e2e6c2496b226540c48f7a6fca7">g_dotFontPath</a>.<a class="code hl_function" href="../../d9/d45/class_q_c_string.html#a621c4090d69ad7d05ef8e5234376c3d8">isEmpty</a>())</div>
+<div class="line"><span class="lineno">   66</span>  {</div>
+<div class="line"><span class="lineno">   67</span>    <a class="code hl_function" href="../../d7/d6f/namespace_portable.html#ac2e29048cffc72c3bed439cff5b02cd4">Portable::unsetenv</a>(<span class="stringliteral">&quot;DOTFONTPATH&quot;</span>);</div>
+<div class="line"><span class="lineno">   68</span>  }</div>
+<div class="line"><span class="lineno">   69</span>  <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   70</span>  {</div>
+<div class="line"><span class="lineno">   71</span>    <a class="code hl_function" href="../../d7/d6f/namespace_portable.html#abd244447df22d110ad410b69c357fdf3">Portable::setenv</a>(<span class="stringliteral">&quot;DOTFONTPATH&quot;</span>,<a class="code hl_variable" href="../../de/daa/dot_8cpp.html#a60d30e2e6c2496b226540c48f7a6fca7">g_dotFontPath</a>);</div>
+<div class="line"><span class="lineno">   72</span>  }</div>
+<div class="line"><span class="lineno">   73</span>  <a class="code hl_variable" href="../../de/daa/dot_8cpp.html#a60d30e2e6c2496b226540c48f7a6fca7">g_dotFontPath</a>=<span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><span class="lineno">   74</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../de/daa/dot_8cpp_source.html#l00039">g_dotFontPath</a>, <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00144">QCString::isEmpty()</a>, <a class="el" href="../../d0/d1c/portable_8cpp_source.html#l00240">Portable::setenv()</a>, and <a class="el" href="../../d0/d1c/portable_8cpp_source.html#l00254">Portable::unsetenv()</a>.</p>
+<p class="reference">References <a class="el" href="../../de/daa/dot_8cpp_source.html#l00038">g_dotFontPath</a>, <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00144">QCString::isEmpty()</a>, <a class="el" href="../../d0/d1c/portable_8cpp_source.html#l00240">Portable::setenv()</a>, and <a class="el" href="../../d0/d1c/portable_8cpp_source.html#l00254">Portable::unsetenv()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../de/daa/dot_8cpp_source.html#l00149">DotManager::run()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../de/daa/dot_8cpp_source.html#l00148">DotManager::run()</a>.</p>
 
 </div>
 </div>
@@ -371,7 +370,7 @@ Variables</h2></td></tr>
 <div class="ttc" id="aqcstring_8h_html_a9851ebb5ae2f65b4d2b1d08421edbfd2"><div class="ttname"><a href="../../d7/d5c/qcstring_8h.html#a9851ebb5ae2f65b4d2b1d08421edbfd2">qPrint</a></div><div class="ttdeci">const char * qPrint(const char *s)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00609">qcstring.h:609</a></div></div>
 <div class="ttc" id="autil_8cpp_html_ab1cc08326518f249ccae693a16f6a10d"><div class="ttname"><a href="../../df/d2d/util_8cpp.html#ab1cc08326518f249ccae693a16f6a10d">getDotImageExtension</a></div><div class="ttdeci">QCString getDotImageExtension()</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d2d/util_8cpp_source.html#l07170">util.cpp:7170</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d3/d48/dir_8cpp_source.html#l00306">Dir::absPath()</a>, <a class="el" href="../../d5/d61/indexlist_8h_source.html#l00122">IndexList::addImageFile()</a>, <a class="el" href="../../d1/dfe/dotrunner_8cpp_source.html#l00157">DotRunner::addJob()</a>, <a class="el" href="../../db/d16/config_8h_source.html#l00033">Config_getBool</a>, <a class="el" href="../../db/d16/config_8h_source.html#l00036">Config_getEnumAsString</a>, <a class="el" href="../../d3/d48/dir_8cpp_source.html#l00200">Dir::exists()</a>, <a class="el" href="../../df/d2d/util_8cpp_source.html#l07170">getDotImageExtension()</a>, <a class="el" href="../../d0/daa/dotgraph_8h_source.html#l00028">GOF_BITMAP</a>, <a class="el" href="../../d1/da1/doxygen_8h_source.html#l00125">Doxygen::indexList</a>, <a class="el" href="../../d2/dd1/dotrunner_8h_source.html#l00054">DotRunner::preventCleanUp()</a>, <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00609">qPrint()</a>, <a class="el" href="../../d1/dfe/dotrunner_8cpp_source.html#l00191">DotRunner::run()</a>, <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00480">QCString::str()</a>, and <a class="el" href="../../d8/d6a/message_8cpp_source.html#l00248">term()</a>.</p>
+<p class="reference">References <a class="el" href="../../d3/d48/dir_8cpp_source.html#l00306">Dir::absPath()</a>, <a class="el" href="../../d5/d61/indexlist_8h_source.html#l00122">IndexList::addImageFile()</a>, <a class="el" href="../../d1/dfe/dotrunner_8cpp_source.html#l00156">DotRunner::addJob()</a>, <a class="el" href="../../db/d16/config_8h_source.html#l00033">Config_getBool</a>, <a class="el" href="../../db/d16/config_8h_source.html#l00036">Config_getEnumAsString</a>, <a class="el" href="../../d3/d48/dir_8cpp_source.html#l00200">Dir::exists()</a>, <a class="el" href="../../df/d2d/util_8cpp_source.html#l07170">getDotImageExtension()</a>, <a class="el" href="../../d0/daa/dotgraph_8h_source.html#l00028">GOF_BITMAP</a>, <a class="el" href="../../d1/da1/doxygen_8h_source.html#l00125">Doxygen::indexList</a>, <a class="el" href="../../d2/dd1/dotrunner_8h_source.html#l00054">DotRunner::preventCleanUp()</a>, <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00609">qPrint()</a>, <a class="el" href="../../d1/dfe/dotrunner_8cpp_source.html#l00190">DotRunner::run()</a>, <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00480">QCString::str()</a>, and <a class="el" href="../../d8/d6a/message_8cpp_source.html#l00248">term()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../dc/d05/docbookvisitor_8cpp_source.html#l01631">DocbookDocVisitor::startDotFile()</a>, <a class="el" href="../../d1/d4e/latexdocvisitor_8cpp_source.html#l01822">LatexDocVisitor::startDotFile()</a>, <a class="el" href="../../de/d9a/rtfdocvisitor_8cpp_source.html#l01695">RTFDocVisitor::writeDotFile()</a>, <a class="el" href="../../dc/d05/docbookvisitor_8cpp_source.html#l01615">DocbookDocVisitor::writeDotFile()</a>, and <a class="el" href="../../da/db0/htmldocvisitor_8cpp_source.html#l02171">HtmlDocVisitor::writeDotFile()</a>.</p>
 
@@ -510,10 +509,10 @@ Variables</h2></td></tr>
 <div class="ttc" id="aclass_text_stream_html"><div class="ttname"><a href="../../d3/d30/class_text_stream.html">TextStream</a></div><div class="ttdoc">Text streaming class that buffers data.</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d7d/textstream_8h_source.html#l00034">textstream.h:35</a></div></div>
 <div class="ttc" id="aclass_text_stream_html_a0859a9bfd6a7b6bafc7050d9f3aef046"><div class="ttname"><a href="../../d3/d30/class_text_stream.html#a0859a9bfd6a7b6bafc7050d9f3aef046">TextStream::empty</a></div><div class="ttdeci">bool empty() const</div><div class="ttdoc">Returns true iff the buffer is empty.</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d7d/textstream_8h_source.html#l00253">textstream.h:253</a></div></div>
 <div class="ttc" id="aclass_text_stream_html_aca8457da22d874f4eb30b35ffe87ebd0"><div class="ttname"><a href="../../d3/d30/class_text_stream.html#aca8457da22d874f4eb30b35ffe87ebd0">TextStream::str</a></div><div class="ttdeci">std::string str() const</div><div class="ttdoc">Return the contents of the buffer as a std::string object.</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d7d/textstream_8h_source.html#l00229">textstream.h:229</a></div></div>
-<div class="ttc" id="adot_8cpp_html_a8e61450eb94b16e866568ad3aed2d9f1"><div class="ttname"><a href="../../de/daa/dot_8cpp.html#a8e61450eb94b16e866568ad3aed2d9f1">MAP_CMD</a></div><div class="ttdeci">#define MAP_CMD</div><div class="ttdef"><b>Definition:</b> <a href="../../de/daa/dot_8cpp_source.html#l00035">dot.cpp:35</a></div></div>
+<div class="ttc" id="adot_8cpp_html_a8e61450eb94b16e866568ad3aed2d9f1"><div class="ttname"><a href="../../de/daa/dot_8cpp.html#a8e61450eb94b16e866568ad3aed2d9f1">MAP_CMD</a></div><div class="ttdeci">#define MAP_CMD</div><div class="ttdef"><b>Definition:</b> <a href="../../de/daa/dot_8cpp_source.html#l00034">dot.cpp:34</a></div></div>
 <div class="ttc" id="aqcstring_8h_html_aa8cecfc5c5c054d2875c03e77b7be15d"><div class="ttname"><a href="../../d7/d5c/qcstring_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a></div><div class="ttdeci">#define TRUE</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00036">qcstring.h:36</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="../../d3/d48/dir_8cpp_source.html#l00306">Dir::absPath()</a>, <a class="el" href="../../d1/dfe/dotrunner_8cpp_source.html#l00157">DotRunner::addJob()</a>, <a class="el" href="../../d9/d92/dotfilepatcher_8cpp_source.html#l00277">DotFilePatcher::addSVGConversion()</a>, <a class="el" href="../../d9/d92/dotfilepatcher_8cpp_source.html#l00217">DotFilePatcher::convertMapFile()</a>, <a class="el" href="../../d4/d7d/textstream_8h_source.html#l00253">TextStream::empty()</a>, <a class="el" href="../../d3/d48/dir_8cpp_source.html#l00200">Dir::exists()</a>, <a class="el" href="../../df/d2d/util_8cpp_source.html#l07170">getDotImageExtension()</a>, <a class="el" href="../../de/daa/dot_8cpp_source.html#l00035">MAP_CMD</a>, <a class="el" href="../../d2/dd1/dotrunner_8h_source.html#l00054">DotRunner::preventCleanUp()</a>, <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00609">qPrint()</a>, <a class="el" href="../../d3/d48/dir_8cpp_source.html#l00257">Dir::remove()</a>, <a class="el" href="../../d1/dfe/dotrunner_8cpp_source.html#l00191">DotRunner::run()</a>, <a class="el" href="../../d9/d92/dotfilepatcher_8cpp_source.html#l00295">DotFilePatcher::run()</a>, <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00480">QCString::str()</a>, <a class="el" href="../../d4/d7d/textstream_8h_source.html#l00229">TextStream::str()</a>, <a class="el" href="../../d8/d6a/message_8cpp_source.html#l00248">term()</a>, <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00036">TRUE</a>, and <a class="el" href="../../d9/d92/dotfilepatcher_8cpp_source.html#l00540">DotFilePatcher::writeSVGFigureLink()</a>.</p>
+<p class="reference">References <a class="el" href="../../d3/d48/dir_8cpp_source.html#l00306">Dir::absPath()</a>, <a class="el" href="../../d1/dfe/dotrunner_8cpp_source.html#l00156">DotRunner::addJob()</a>, <a class="el" href="../../d9/d92/dotfilepatcher_8cpp_source.html#l00277">DotFilePatcher::addSVGConversion()</a>, <a class="el" href="../../d9/d92/dotfilepatcher_8cpp_source.html#l00217">DotFilePatcher::convertMapFile()</a>, <a class="el" href="../../d4/d7d/textstream_8h_source.html#l00253">TextStream::empty()</a>, <a class="el" href="../../d3/d48/dir_8cpp_source.html#l00200">Dir::exists()</a>, <a class="el" href="../../df/d2d/util_8cpp_source.html#l07170">getDotImageExtension()</a>, <a class="el" href="../../de/daa/dot_8cpp_source.html#l00034">MAP_CMD</a>, <a class="el" href="../../d2/dd1/dotrunner_8h_source.html#l00054">DotRunner::preventCleanUp()</a>, <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00609">qPrint()</a>, <a class="el" href="../../d3/d48/dir_8cpp_source.html#l00257">Dir::remove()</a>, <a class="el" href="../../d1/dfe/dotrunner_8cpp_source.html#l00190">DotRunner::run()</a>, <a class="el" href="../../d9/d92/dotfilepatcher_8cpp_source.html#l00295">DotFilePatcher::run()</a>, <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00480">QCString::str()</a>, <a class="el" href="../../d4/d7d/textstream_8h_source.html#l00229">TextStream::str()</a>, <a class="el" href="../../d8/d6a/message_8cpp_source.html#l00248">term()</a>, <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00036">TRUE</a>, and <a class="el" href="../../d9/d92/dotfilepatcher_8cpp_source.html#l00540">DotFilePatcher::writeSVGFigureLink()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../da/db0/htmldocvisitor_8cpp_source.html#l02171">HtmlDocVisitor::writeDotFile()</a>.</p>
 
@@ -540,9 +539,9 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/daa/dot_8cpp_source.html#l00039">39</a> of file <a class="el" href="../../de/daa/dot_8cpp_source.html">dot.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/daa/dot_8cpp_source.html#l00038">38</a> of file <a class="el" href="../../de/daa/dot_8cpp_source.html">dot.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../de/daa/dot_8cpp_source.html#l00043">setDotFontPath()</a>, and <a class="el" href="../../de/daa/dot_8cpp_source.html#l00064">unsetDotFontPath()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../de/daa/dot_8cpp_source.html#l00042">setDotFontPath()</a>, and <a class="el" href="../../de/daa/dot_8cpp_source.html#l00063">unsetDotFontPath()</a>.</p>
 
 </div>
 </div>
@@ -566,9 +565,9 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/daa/dot_8cpp_source.html#l00041">41</a> of file <a class="el" href="../../de/daa/dot_8cpp_source.html">dot.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/daa/dot_8cpp_source.html#l00040">40</a> of file <a class="el" href="../../de/daa/dot_8cpp_source.html">dot.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../de/daa/dot_8cpp_source.html#l00137">DotManager::createFilePatcher()</a>, and <a class="el" href="../../de/daa/dot_8cpp_source.html#l00113">DotManager::createRunner()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../de/daa/dot_8cpp_source.html#l00136">DotManager::createFilePatcher()</a>, and <a class="el" href="../../de/daa/dot_8cpp_source.html#l00112">DotManager::createRunner()</a>.</p>
 
 </div>
 </div>
