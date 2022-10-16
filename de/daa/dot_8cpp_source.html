@@ -324,8 +324,8 @@ $(document).ready(function(){initNavTree('de/daa/dot_8cpp_source.html','../../')
 <div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>                    std::lock_guard&lt;std::mutex&gt; locker(mutex);</div>
 <div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>                    <span class="keywordflow">if</span> (queue.empty())</div>
 <div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>                        <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>                    dotCommand = queue.front();</div>
-<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>                    queue.erase(queue.begin());</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>                    dotCommand = queue.back();</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>                    queue.pop_back();</div>
 <div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>                    <a class="code hl_function" href="../../d8/d6a/message_8cpp.html#aba549a028419cd48a3f373037c2c57eb">msg</a>(<span class="stringliteral">&quot;Running dot batch %zu/%zu\n&quot;</span>, n_batches-queue.size(), n_batches);</div>
 <div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>                }</div>
 <div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>                std::system(dotCommand.c_str());</div>
